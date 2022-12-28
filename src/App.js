@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useEffect } from "react";
+import Navbar from "./layout/Navbar";
+import Hero from "./components/Hero";
+import Aos from "aos";
+import Skills from "./components/skills";
+import "aos/dist/aos.css";
+import Services from "./components/services";
+import Project from "./components/project";
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1800,
+      offset: 100,
+      disable: "mobile",
+    });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Navbar />
+      <Hero />
+      <Skills />
+      <Services />
+      <Project />
+      <footer className="p-3 text-center">
+        <h6 className="mb-3">JOHN ALEX</h6>
+        <p>codeaprogram © All CopyRights Reserved 2022</p>
+      </footer>
     </div>
   );
 }
